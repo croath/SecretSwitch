@@ -12,7 +12,7 @@ Like this:
 
     #import "SerectSwitch.h"
 
-and then:
+and then add this to your `application:didFinishLaunchingWithOptions:` method:
 
 	[SerectSwitch protectSecret];
 
