@@ -7,12 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "SerectSwitch.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [SerectSwitch protectSecret];
     return YES;
 }
 							

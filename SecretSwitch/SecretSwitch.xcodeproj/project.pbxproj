@@ -22,6 +22,7 @@
 		27A0EE411889A49800F0BFF7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A0EE201889A49800F0BFF7 /* UIKit.framework */; };
 		27A0EE491889A49800F0BFF7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27A0EE471889A49800F0BFF7 /* InfoPlist.strings */; };
 		27A0EE4B1889A49800F0BFF7 /* SecretSwitchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 27A0EE4A1889A49800F0BFF7 /* SecretSwitchTests.m */; };
+		27CEEF2C188FBBDE00ED70EF /* SerectSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CEEF2B188FBBDE00ED70EF /* SerectSwitch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		27A0EE461889A49800F0BFF7 /* SecretSwitchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SecretSwitchTests-Info.plist"; sourceTree = "<group>"; };
 		27A0EE481889A49800F0BFF7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		27A0EE4A1889A49800F0BFF7 /* SecretSwitchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecretSwitchTests.m; sourceTree = "<group>"; };
+		27CEEF2A188FBBDE00ED70EF /* SerectSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerectSwitch.h; sourceTree = "<group>"; };
+		27CEEF2B188FBBDE00ED70EF /* SerectSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerectSwitch.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,7 @@
 		27A0EE221889A49800F0BFF7 /* SecretSwitch */ = {
 			isa = PBXGroup;
 			children = (
+				27CEEF29188FBBCD00ED70EF /* Class */,
 				27A0EE2B1889A49800F0BFF7 /* AppDelegate.h */,
 				27A0EE2C1889A49800F0BFF7 /* AppDelegate.m */,
 				27A0EE2E1889A49800F0BFF7 /* Main_iPhone.storyboard */,
@@ -153,6 +157,15 @@
 				27A0EE471889A49800F0BFF7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27CEEF29188FBBCD00ED70EF /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				27CEEF2A188FBBDE00ED70EF /* SerectSwitch.h */,
+				27CEEF2B188FBBDE00ED70EF /* SerectSwitch.m */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27A0EE361889A49800F0BFF7 /* ViewController.m in Sources */,
+				27CEEF2C188FBBDE00ED70EF /* SerectSwitch.m in Sources */,
 				27A0EE2D1889A49800F0BFF7 /* AppDelegate.m in Sources */,
 				27A0EE291889A49800F0BFF7 /* main.m in Sources */,
 			);
@@ -474,6 +488,7 @@
 				27A0EE501889A49800F0BFF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27A0EE511889A49800F0BFF7 /* Build configuration list for PBXNativeTarget "SecretSwitchTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +497,7 @@
 				27A0EE531889A49800F0BFF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
