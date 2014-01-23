@@ -13,9 +13,16 @@
 static UIImageView *imageView;
 
 + (void)protectSecret{
+    if (imageView == nil) {
+        imageView = [[UIImageView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        [imageView.layer setBorderWidth:1.f];
+        [imageView.layer setBorderColor:[UIColor whiteColor].CGColor];
+        [imageView.layer setMasksToBounds:YES];
+        [imageView setContentMode:UIViewContentModeScaleToFill];
+    }
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(applicationDidEnterBackground)
-                                                 name:UIApplicationDidEnterBackgroundNotification
+                                             selector:@selector(applicationWillResignActive)
+                                                 name:UIApplicationWillResignActiveNotification
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(applicationDidBecomeActive)
@@ -23,17 +30,17 @@ static UIImageView *imageView;
                                                object:nil];
 }
 
-+ (void)applicationDidEnterBackground{
++ (void)applicationWillResignActive{
     UIWindow *window = [[UIApplication sharedApplication] keyWindow];
-    UIView *view = [[[window rootViewController] view] snapshotViewAfterScreenUpdates:NO];
+    UIView *view = [window.subviews lastObject];
     
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(view.bounds.size.width/2, view.bounds.size.height/2), NO, 0);
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(view.bounds.size.width/4, view.bounds.size.height/4), NO, 0);
     
     [view drawViewHierarchyInRect:CGRectMake(view.bounds.origin.x,
                                              view.bounds.origin.y,
-                                             view.bounds.size.width/2,
-                                             view.bounds.size.height/2)
-               afterScreenUpdates:YES];
+                                             view.bounds.size.width/4,
+                                             view.bounds.size.height/4)
+               afterScreenUpdates:NO];
     
     UIImage *copied = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -51,13 +58,9 @@ static UIImageView *imageView;
     CIContext *context = [CIContext contextWithOptions:nil];
     UIImage *image = [UIImage imageWithCGImage:[context createCGImage:outputImage fromRect:outputImage.extent]];
     
-    if (imageView == nil) {
-        imageView = [[UIImageView alloc] initWithFrame:view.bounds];
-        [imageView setContentMode:UIViewContentModeScaleToFill];
-    }
     [imageView setAlpha:1.f];
     [imageView setImage:image];
-    [window addSubview:imageView];
+    [window.subviews.lastObject addSubview:imageView];
 }
 
 + (void)applicationDidBecomeActive{
