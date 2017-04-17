@@ -2,13 +2,13 @@ SecretSwitch
 ============
 Protect your secret info while switching apps.
 
-##Demo
+## Demo
 
 Like this:
 
 ![demo](https://raw2.github.com/croath/SecretSwitch/master/demo.gif)
 
-##How to
+## How to
 
     #import "SerectSwitch.h"
 
